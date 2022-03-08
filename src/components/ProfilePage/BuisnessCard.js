@@ -13,7 +13,7 @@ import src from '../../assets/test.jpg'
 const BuisnessCard = () => {
     return (
            <div style={{marginTop:'130px'}}>
-               <Typography style={{textAlign:'left'}}>MYME/ Bento Joseph</Typography>
+               <Typography style={{textAlign:'left' , marginBottom:'20px'}}>MYME/ Bento Joseph</Typography>
            <Card sx={{ minWidth: 475 , marginBottom:'20px'}}>
                <CardHeader></CardHeader>
                <CardContent>

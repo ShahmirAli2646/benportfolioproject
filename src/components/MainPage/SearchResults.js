@@ -8,6 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import { Link } from 'react-router-dom';
 
 const SearchResults = ()=>{
     const result = [
@@ -80,9 +81,12 @@ const SearchResults = ()=>{
             
             <Card style={{margin:'6px'}} sx={{ minWidth: 275 }}>
         <CardContent>
+            <Link to={'/profile'}>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            
           {item.title}
         </Typography>
+        </Link>
        
       </CardContent>
       

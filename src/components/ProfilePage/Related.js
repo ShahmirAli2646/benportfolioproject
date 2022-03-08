@@ -74,11 +74,11 @@ const Related = ()=>{
       
       <Container maxWidth="md">
         
-        <Typography style={{textAlign:'left'}}>Related</Typography>
-        <Stack style={{flexWrap:'wrap' , justifyContent:'center'}} direction="row" >
+        <Typography style={{marginTop:'10px',textAlign:'left'}}>Related</Typography>
+        <Stack style={{flexWrap:'wrap' }} direction="row" >
         {result.map((item)=>(
             
-            <Card style={{margin:'15px'}} sx={{ maxWidth:600 }}>
+            <Card style={{margin:'15px'}} sx={{ minWidth:275 }}>
         <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {item.title}
