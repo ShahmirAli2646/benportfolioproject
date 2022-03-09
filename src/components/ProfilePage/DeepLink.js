@@ -11,6 +11,7 @@ import ReactCardFlip from 'react-card-flip';
 import Switch from '@mui/material/Switch';
 import { Stack } from '@mui/material';
 import { CardMedia } from '@mui/material';
+import Link from '@mui/material/Link';
 
 
 
@@ -25,7 +26,7 @@ const DeepLink = (props) => {
                             image={props.qr}
                             alt="Paella dish" />
                             <Stack direction="column" spacing={2}>
-                            <Typography>{props.url}</Typography>
+                            <Link href={props.url}>{props.url}</Link>
                             <Typography>{'Scan QR code or follow the link to save my smart buinsess card'}</Typography>
                             </Stack>
                             <Typography>{'Powered by UPDATE APP'}</Typography>
