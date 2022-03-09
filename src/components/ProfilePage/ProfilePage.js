@@ -9,6 +9,7 @@ import ProductsList from './ProductsList';
 import ServicesList from './ServicesList';
 import Related from './Related';
 import { useLocation } from 'react-router-dom'
+import DeepLink from './DeepLink';
 
 
 const ProfilePage = () => {
@@ -25,7 +26,9 @@ const ProfilePage = () => {
         insta,
         linkin,
         cardfront,
-        cardback } = location.state
+        cardback,
+        qr,
+        url } = location.state
     React.useEffect(() => {
 
     }, [])
@@ -53,6 +56,7 @@ const ProfilePage = () => {
                         state={state} />
                     <ProductsList products={products} />
                     <ServicesList services={services} />
+                    <DeepLink qr={qr} url={url}/>
                 </Grid>
                 <Grid item xl={6} lg={6} md={6}>
                     <Related />

@@ -120,7 +120,9 @@ const SearchResults = ()=>{
                   insta:item?.data?.insta,
                   linkin:item?.data?.linkin,
                   cardfront:item?.data?.cardFront,
-                  cardback:item?.data?.cardBack
+                  cardback:item?.data?.cardBack,
+                  qr:item?.data?.qrCodeImage,
+                  url:item?.data?.web
                   }}}>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             
