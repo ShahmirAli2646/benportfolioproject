@@ -10,21 +10,20 @@ import { Button } from '@mui/material';
 import src from '../../assets/test.jpg'
 
 
-const BuisnessCard = () => {
+const BuisnessCard = (props) => {
     return (
            <div style={{marginTop:'130px'}}>
-               <Typography style={{textAlign:'left' , marginBottom:'20px'}}>MYME/ Bento Joseph</Typography>
+               <Typography style={{textAlign:'left' , marginBottom:'20px'}}>{props.username}</Typography>
            <Card sx={{ minWidth: 475 , marginBottom:'20px'}}>
                <CardHeader></CardHeader>
                <CardContent>
-               <Avatar style={{float:'right' , position:'relative' , top:'-27px'}} alt="Remy Sharp" src={src} />
+               <Avatar style={{float:'right' , position:'relative' , top:'-27px'}} alt="Remy Sharp" src={props.photo} />
                    <Typography>Buisness Card</Typography>
                </CardContent>
                <CardActions style={{justifyContent:'center'}}>
-                   <Button>Facebook</Button>
-                   <Button>Instagram</Button>
-                   <Button>Twitter</Button>
-                   <Button>LinkedIn</Button>
+                   <Button variant="outlined" href={props.fb}>Facebook</Button>
+                   <Button variant="outlined" href={props.insta}>Instagram</Button>
+                   <Button variant="outlined" href={props.linkin}>LinkedIn</Button>
                    </CardActions>
            </Card>
            </div>
