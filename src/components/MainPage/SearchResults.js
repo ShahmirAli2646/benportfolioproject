@@ -98,16 +98,17 @@ const SearchResults = () => {
     return (
         <React.Fragment>
 
-            
-            <Container >
 
-                <Typography style={{ textAlign: 'left' }}>Top Searches</Typography>
+            <Container >
+                <Typography style={{ position: "fixed", left: '12%', top: "55%" }}>Top Searches</Typography>
+
                 {console.log('data', users?.data)}
-                <Stack style={{ flexWrap: 'wrap' }} direction="row" >
+                <Stack style={{ flexWrap: 'wrap' }} direction="row" justifyContent='center'>
+
                     {users?.map((item) => (
 
-                        <Card style={{ margin: '6px'  }} sx={{ minWidth: 200 }} >
-                            <CardContent style={{padding:0}}>
+                        <Card style={{ margin: '6px' }} sx={{ minWidth: 230 }} >
+                            <CardContent style={{ padding: 0 }}>
 
                                 <Link to={{
                                     pathname: '/profile',
@@ -127,21 +128,23 @@ const SearchResults = () => {
                                         cardback: item?.data?.cardBack,
                                         qr: item?.data?.qrCodeImage,
                                         url: item?.data?.web,
-                                        twitter:item?.data?.twitr,
-                                        youtube:item?.data?.yt,
-                                        whatsapp:item?.data?.whatsapp,
-                                        mail:item?.data?.mail,
-                                        dynamicLink:item?.data?.dynamicLink,
+                                        twitter: item?.data?.twitr,
+                                        youtube: item?.data?.yt,
+                                        whatsapp: item?.data?.whatsapp,
+                                        mail: item?.data?.mail,
+                                        dynamicLink: item?.data?.dynamicLink,
 
                                     }
                                 }}>
                                     <CardMedia component="img"
-                                        
+
                                         image={item?.data.cardFront}
-                                        sx={{width:'100%', height:'110px',
-                                        backgroundSize: '',
-                                        backgroundRepeat: 'no-repeat',}}
-                                         />
+                                        sx={{
+                                            width: '100%', height: '130px',
+                                            backgroundSize: '',
+                                            backgroundRepeat: 'no-repeat',
+                                        }}
+                                    />
                                 </Link>
 
                             </CardContent>

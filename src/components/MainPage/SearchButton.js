@@ -6,9 +6,9 @@ import { Container } from '@mui/material';
 export default function SearchButton() {
   return (
     <Container>
-    <Stack style={{display:'block' , margin:'30px' , marginBottom:'50px'}}>
-      <Button variant="contained" style={{padding:'10px' , width:'30%' , backgroundColor:'#034371'}}>Search</Button>
-    </Stack>
+      <Stack style={{ display: 'block', margin: '30px', marginBottom: '50px' }}>
+        <Button variant="contained" style={{ padding: '10px', width: '18%', backgroundColor: '#034371' }}>Search</Button>
+      </Stack>
     </Container>
   );
 }
