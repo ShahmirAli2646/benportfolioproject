@@ -30,12 +30,12 @@ const AvatarandDetails = (props) => {
                     <Typography>{props.role}</Typography>
                     <Stack style={{ flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px' }}
                         direction="row"
-                        divider={<Divider orientation="vertical" flexItem />}
+                        divider={<Divider style={{marginLeft:'0px'}} orientation="vertical" flexItem />}
                         spacing={2}
                     >
-                        <Item>{props.address}</Item>
-                        <Item>{props.city}</Item>
-                        <Item>{props.state}</Item>
+                        <Item style={{margin:'5px'}}>{props.address}</Item>
+                        <Item style={{margin:'5px'}}>{props.city}</Item>
+                        <Item style={{margin:'5px'}}>{props.state}</Item>
                         
 
                     </Stack>
