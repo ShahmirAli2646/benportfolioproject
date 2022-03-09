@@ -28,12 +28,16 @@ const ProfilePage = () => {
         cardfront,
         cardback,
         qr,
-        url } = location.state
+        url,
+        twitter,
+        youtube,
+        whatsapp,
+        mail,
+        dynamicLink, } = location.state
     React.useEffect(() => {
 
     }, [])
     return (
-
         <Container maxWidth='xl' >
             <CssBaseline />
             <Grid container spacing={1}>
@@ -46,7 +50,14 @@ const ProfilePage = () => {
                         insta={insta}
                         linkin={linkin}
                         username={username}
-                        photo={photo} />
+                        photo={photo} 
+                        qr={qr}
+                        twitter={twitter}
+                        youtube={youtube}
+                        whatsapp={whatsapp}
+                        mail={mail}
+                        url={url}
+                        />
                     <AvatarandDetails
                         photo={photo}
                         username={username}
@@ -56,7 +67,7 @@ const ProfilePage = () => {
                         state={state} />
                     <ProductsList products={products} />
                     <ServicesList services={services} />
-                    <DeepLink qr={qr} url={url}/>
+                    <DeepLink qr={qr} url={dynamicLink}/>
                 </Grid>
                 <Grid item xl={6} lg={6} md={6}>
                     <Related />
