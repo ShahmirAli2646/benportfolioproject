@@ -12,6 +12,7 @@ import Switch from '@mui/material/Switch';
 import { Stack } from '@mui/material';
 import { CardMedia } from '@mui/material';
 import Link from '@mui/material/Link';
+import power from '../../assets/Powered-by.png'
 
 
 
@@ -29,7 +30,7 @@ const DeepLink = (props) => {
                             <Link href={props.url}>{props.url}</Link>
                             <Typography>{'Scan QR code or follow the link to save my smart buinsess card'}</Typography>
                             </Stack>
-                            <Typography>{'Powered by UPDATE APP'}</Typography>
+                            <img src={power}/>
                     </Stack>
                 </CardContent>
             </Card>
