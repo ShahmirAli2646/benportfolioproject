@@ -40,7 +40,7 @@ const Related = (props) => {
     return (
         <React.Fragment>
 
-            <Container maxWidth="md">
+            
                 {props.searchresult.length!==0?(
                     <Typography style={{ marginTop: '10px', textAlign: 'left' }}>Search Results</Typography>
                 ):<Typography style={{ marginTop: '10px', textAlign: 'left' }}>Related</Typography>}
@@ -49,7 +49,7 @@ const Related = (props) => {
                         <React.Fragment>
                             {props.searchresult.map((item) => (
 
-                                <Card style={{ margin: '15px' }} sx={{ minWidth: 250 }}>
+                                <Card style={{margin:'3px'}} sx={{ minWidth: 250 }}>
                                     <CardContent style={{ padding: 0 }}>
                                         <Link to={{
                                             pathname: '/profile',
@@ -95,7 +95,7 @@ const Related = (props) => {
                     ) : <React.Fragment>
                         {users?.map((item) => (
 
-                            <Card style={{ margin: '15px' }} sx={{ minWidth: 250 }}>
+                            <Card style={{margin:'3px'}} sx={{ minWidth: 250 }}>
                                 <CardContent style={{ padding: 0 }}>
                                     <Link to={{
                                         pathname: '/profile',
@@ -141,7 +141,7 @@ const Related = (props) => {
 
                 </Stack>
 
-            </Container>
+           
         </React.Fragment>
     )
 }

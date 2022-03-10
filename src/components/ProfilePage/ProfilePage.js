@@ -66,10 +66,10 @@ const ProfilePage = () => {
 
     }, [])
     return (
-        <Container maxWidth='xl' >
+        <Container maxWidth='lg' >
             <CssBaseline />
             <Grid container spacing={1}>
-                <Grid item xl={6} lg={6} md={6}  >
+                <Grid item xl={6} lg={6} md={8}  >
                     <TextField
                         value={text}
                         onChange={(event) => {
@@ -113,7 +113,7 @@ const ProfilePage = () => {
                     <ServicesList services={services} />
                     <DeepLink qr={qr} url={dynamicLink} />
                 </Grid>
-                <Grid item xl={6} lg={6} md={6}>
+                <Grid item xl={6} lg={6} md={8}>
                     <Related searchresult={searchresult} />
                 </Grid>
 

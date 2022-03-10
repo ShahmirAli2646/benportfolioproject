@@ -3,20 +3,27 @@ import { Typography } from '@mui/material';
 
 const ServicesList = (props) => {
     var serviceli = props.services;
-    var myArray = serviceli.split('__,__');
-
-    const mylist1 = myArray.map((myArray) =>
-        <li key={myArray}>
-            {myArray}
-        </li>
-    );
+    var myArray = [];
+    if(serviceli!==undefined){
+        if(serviceli.length!==0){
+            myArray = serviceli.split('__,__');
+         }
+    } 
+   
     return (
         <div style={{ marginTop: '100px' }}>
-            <Typography style={{ textAlign: 'left' }}>Services</Typography>
-            <ul>
-                <li style={{ textAlign: 'left' }}>{mylist1}</li>
-
-            </ul>
+           {myArray.length!==0?(
+                <Typography style={{ textAlign: 'left' }}>Services</Typography>
+            ):''}
+               {myArray.length!==0?(
+                   myArray.map((item)=>(
+                    <ul>
+                        <li>
+                            {item}
+                        </li>
+                    </ul>
+                   ))
+               ):''} 
         </div>
     )
 }
