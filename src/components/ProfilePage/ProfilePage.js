@@ -114,7 +114,7 @@ const ProfilePage = () => {
                     <DeepLink qr={qr} url={dynamicLink} />
                 </Grid>
                 <Grid item xl={6} lg={6} md={6}>
-                    <Related searchresult={searchresult}/>
+                    <Related searchresult={searchresult} />
                 </Grid>
 
 

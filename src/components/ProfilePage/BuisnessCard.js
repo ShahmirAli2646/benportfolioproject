@@ -22,7 +22,7 @@ import site from '../../assets/site.png'
 import twitter from '../../assets/twitter.png'
 import whatsapp from '../../assets/whatsapp.png'
 import youtube from '../../assets/youtube.png'
-import QRcodeicon from '../../assets/QRcodeicon.png'
+import qrfinal from '../../assets/qrfinal.png'
 
 
 
@@ -55,24 +55,29 @@ const BuisnessCard = (props) => {
             <Typography style={{ textAlign: 'left', marginBottom: '20px' }}>{props.username}</Typography>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
 
-                <Card sx={{ minWidth: 475, marginBottom: '20px', border: "none", boxShadow: "none", }}>
-                    <CardHeader style={{ flexDirection: 'row-reverse' }} avatar={
+
+                <Card sx={{ minWidth: '540px', marginBottom: '20px', position: "relative", border: "none", boxShadow: "none", justifyContent: "left", alignItems: "left", }}>
+                    {/* <CardHeader style={{ flexDirection: 'row-reverse' }} avatar={
 
                         <Avatar style={{ cursor: 'pointer' }} alt="Remy Sharp" src={QRcodeicon} onClick={handleQRClick}>
 
                         </Avatar>
-                    } />
-                    <CardContent>
+                    } /> */}
+                    <CardContent style={{ width: '102%', alignContent: 'left', position: 'relative', left: '-14px' }}>
+
+                        {/* <QrCode2Icon color="disabled" fontSize="large" style={{}} /> */}
+                        <Avatar style={{ cursor: 'pointer', position: 'relative', left: '86%', top: "70px", height: '50px', width: "50px", }} alt="Remy Sharp" src={qrfinal} onClick={handleQRClick}></Avatar>
+                        <CardMedia
 
 
-
-                        <CardMedia style={{ width: '650px' }}
+                            style={{
+                                width: '103%', borderRadius: "4%",
+                            }}
                             component="img"
-
-
-
                             image={props.cardfront}
-                            alt="Paella dish" />
+                            alt="Paella dish"
+
+                        />
 
                     </CardContent>
                     <Switch onClick={handleClick} />
@@ -81,17 +86,19 @@ const BuisnessCard = (props) => {
 
 
 
-                <Card sx={{ minWidth: 475, marginBottom: '20px' }}>
-                    <CardHeader style={{ flexDirection: 'row-reverse' }} avatar={
+                <Card sx={{ minWidth: '540px', marginBottom: '20px', position: "relative", border: "none", boxShadow: "none", justifyContent: "left", alignItems: "left", }}>
+                    {/* <CardHeader style={{ flexDirection: 'row-reverse' }} avatar={
                         <Avatar style={{ cursor: 'pointer' }} alt="Remy Sharp" src={props.qr} onClick={handleQRClick}>
 
                         </Avatar>
 
 
-                    } />
-                    <CardContent>
-                        <CardMedia component="img"
+                    } /> */}
+                    <Avatar style={{ cursor: 'pointer', position: 'relative', left: '86%', top: "70px", height: '50px', width: "50px", }} alt="Remy Sharp" src={qrfinal} onClick={handleQRClick}></Avatar>
+                    <CardContent style={{ width: '102%', alignContent: 'left', position: 'relative', left: '-14px' }}>
 
+                        <CardMedia component="img"
+                            style={{ width: '103%', borderRadius: "4%" }}
                             image={props.cardback}
                             alt="Paella dish" />
 
@@ -104,29 +111,29 @@ const BuisnessCard = (props) => {
             </ReactCardFlip>
             <Stack style={{ justifyContent: 'center' }} direction="row" spacing={2}>
                 {!!props.fb ? (
-                    <a href={props.fb}><img style={{ width: '50%' }} src={facebook} ></img> </a>
+                    <a href={props.fb}><img style={{ width: '50px', height: '50px' }} src={facebook} ></img> </a>
                 ) : ''}
                 {!!props.insta ? (
-                    <a href={props.insta}><img style={{ width: '50%' }} src={instagram} /></a>
+                    <a href={props.insta}><img style={{ width: '50px', height: '50px' }} src={instagram} /></a>
                 ) : ''}
                 {!!props.linkin ? (
-                    <a href={props.linkin}><img style={{ width: '50%' }} src={linkedin} /></a>
+                    <a href={props.linkin}><img style={{ width: '50px', height: '50px' }} src={linkedin} /></a>
                 ) : ''}
 
                 {!!props.twitter ? (
-                    <a href={props.twitter}><img style={{ width: '50%' }} src={twitter} /></a>
+                    <a href={props.twitter}><img style={{ width: '50px', height: '50px' }} src={twitter} /></a>
                 ) : ''}
                 {!!props.whatsapp ? (
-                    <a href={props.whatsapp}><img style={{ width: '50%' }} src={whatsapp} /></a>
+                    <a href={props.whatsapp}><img style={{ width: '50px', height: '50px' }} src={whatsapp} /></a>
                 ) : ''}
                 {!!props.youtube ? (
-                    <a href={props.youtube}><img style={{ width: '50%' }} src={youtube} /></a>
+                    <a href={props.youtube}><img style={{ width: '50px', height: '50px' }} src={youtube} /></a>
                 ) : ''}
                 {!!props.url ? (
-                    <a href={props.url}><img style={{ width: '50%' }} src={site} /></a>
+                    <a href={props.url}><img style={{ width: '50px', height: '50px' }} src={site} /></a>
                 ) : ''}
                 {!!props.mail ? (
-                    <a href={props.mail}><img style={{ width: '50%' }} src={email} /></a>
+                    <a href={props.mail}><img style={{ width: '50px', height: '50px' }} src={email} /></a>
                 ) : ''}
             </Stack>
             <Popover
