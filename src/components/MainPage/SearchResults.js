@@ -15,7 +15,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { CardMedia } from '@mui/material';
 
 
-const SearchResults = () => {
+const SearchResults = (props) => {
     const [users, setUsers] = useState([])
     const fetchBlogs = async () => {
 
@@ -36,121 +36,116 @@ const SearchResults = () => {
         fetchBlogs();
 
     }, [])
-    const result = [
-        {
-            title: 'buisness Card',
-
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-    ]
+    
     return (
         <React.Fragment>
 
 
             <Container >
-                <Typography style={{ position: "fixed", left: '12%', top: "55%" }}>Top Searches</Typography>
-
+                {console.log('search' , props.searchresult)}
+                {props.searchresult.length!==0 ? (
+                    <Typography style={{ textAlign: 'left', position: 'relative', left: '75px' }}>Search Results</Typography>
+                ) : <Typography style={{ textAlign: 'left', position: 'relative', left: '75px' }}>Top Searches</Typography>}
                 {console.log('data', users?.data)}
                 <Stack style={{ flexWrap: 'wrap' }} direction="row" justifyContent='center'>
+                    {props.searchresult.length!==0 ? (
+                        <React.Fragment>
+                            {props.searchresult.map((item) => (
 
-                    {users?.map((item) => (
+                                <Card style={{ margin: '6px' }} sx={{ minWidth: 230 }} >
+                                    <CardContent style={{ padding: 0 }}>
 
-                        <Card style={{ margin: '6px' }} sx={{ minWidth: 230 }} >
-                            <CardContent style={{ padding: 0 }}>
+                                        <Link to={{
+                                            pathname: '/profile',
+                                            state: {
+                                                username: item?.data?.fname,
+                                                products: item?.data?.productString,
+                                                services: item?.data?.serviceString,
+                                                address: item?.data?.address,
+                                                city: item?.data?.city,
+                                                state: item?.data?.state,
+                                                photo: item?.data?.photoURL,
+                                                role: item?.data?.role,
+                                                fb: item?.data?.fb,
+                                                insta: item?.data?.insta,
+                                                linkin: item?.data?.linkin,
+                                                cardfront: item?.data?.cardFront,
+                                                cardback: item?.data?.cardBack,
+                                                qr: item?.data?.qrCodeImage,
+                                                url: item?.data?.web,
+                                                twitter: item?.data?.twitr,
+                                                youtube: item?.data?.yt,
+                                                whatsapp: item?.data?.whatsapp,
+                                                mail: item?.data?.mail,
+                                                dynamicLink: item?.data?.dynamicLink,
 
-                                <Link to={{
-                                    pathname: '/profile',
-                                    state: {
-                                        username: item?.data?.fname,
-                                        products: item?.data?.productString,
-                                        services: item?.data?.serviceString,
-                                        address: item?.data?.address,
-                                        city: item?.data?.city,
-                                        state: item?.data?.state,
-                                        photo: item?.data?.photoURL,
-                                        role: item?.data?.role,
-                                        fb: item?.data?.fb,
-                                        insta: item?.data?.insta,
-                                        linkin: item?.data?.linkin,
-                                        cardfront: item?.data?.cardFront,
-                                        cardback: item?.data?.cardBack,
-                                        qr: item?.data?.qrCodeImage,
-                                        url: item?.data?.web,
-                                        twitter: item?.data?.twitr,
-                                        youtube: item?.data?.yt,
-                                        whatsapp: item?.data?.whatsapp,
-                                        mail: item?.data?.mail,
-                                        dynamicLink: item?.data?.dynamicLink,
+                                            }
+                                        }}>
+                                            <CardMedia component="img"
 
-                                    }
-                                }}>
-                                    <CardMedia component="img"
+                                                image={item?.data.cardFront}
+                                                sx={{
+                                                    width: '100%', height: '130px',
+                                                    backgroundSize: '',
+                                                    backgroundRepeat: 'no-repeat',
+                                                }}
+                                            />
+                                        </Link>
 
-                                        image={item?.data.cardFront}
-                                        sx={{
-                                            width: '100%', height: '130px',
-                                            backgroundSize: '',
-                                            backgroundRepeat: 'no-repeat',
-                                        }}
-                                    />
-                                </Link>
+                                    </CardContent>
 
-                            </CardContent>
+                                </Card>
+                            ))}
+                        </React.Fragment>
+                    ) : <React.Fragment>
+                        {users?.map((item) => (
 
-                        </Card>
-                    ))}
+                            <Card style={{ margin: '6px' }} sx={{ minWidth: 230 }} >
+                                <CardContent style={{ padding: 0 }}>
+
+                                    <Link to={{
+                                        pathname: '/profile',
+                                        state: {
+                                            username: item?.data?.fname,
+                                            products: item?.data?.productString,
+                                            services: item?.data?.serviceString,
+                                            address: item?.data?.address,
+                                            city: item?.data?.city,
+                                            state: item?.data?.state,
+                                            photo: item?.data?.photoURL,
+                                            role: item?.data?.role,
+                                            fb: item?.data?.fb,
+                                            insta: item?.data?.insta,
+                                            linkin: item?.data?.linkin,
+                                            cardfront: item?.data?.cardFront,
+                                            cardback: item?.data?.cardBack,
+                                            qr: item?.data?.qrCodeImage,
+                                            url: item?.data?.web,
+                                            twitter: item?.data?.twitr,
+                                            youtube: item?.data?.yt,
+                                            whatsapp: item?.data?.whatsapp,
+                                            mail: item?.data?.mail,
+                                            dynamicLink: item?.data?.dynamicLink,
+
+                                        }
+                                    }}>
+                                        <CardMedia component="img"
+
+                                            image={item?.data.cardFront}
+                                            sx={{
+                                                width: '100%', height: '130px',
+                                                backgroundSize: '',
+                                                backgroundRepeat: 'no-repeat',
+                                            }}
+                                        />
+                                    </Link>
+
+                                </CardContent>
+
+                            </Card>
+                        ))}
+                    </React.Fragment>}
+
                 </Stack>
 
             </Container>

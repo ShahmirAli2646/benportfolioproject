@@ -15,7 +15,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { CardMedia } from '@mui/material';
 
 
-const Related = () => {
+const Related = (props) => {
     const [users, setUsers] = useState([])
     const fetchBlogs = async () => {
 
@@ -36,116 +36,109 @@ const Related = () => {
         fetchBlogs();
 
     }, [])
-    const result = [
-        {
-            title: 'buisness Card',
 
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-        {
-            title: 'buisness Card',
-        },
-    ]
     return (
         <React.Fragment>
 
             <Container maxWidth="md">
-
-                <Typography style={{ marginTop: '10px', textAlign: 'left' }}>Related</Typography>
+                {props.searchresult.length!==0?(
+                    <Typography style={{ marginTop: '10px', textAlign: 'left' }}>Search Results</Typography>
+                ):<Typography style={{ marginTop: '10px', textAlign: 'left' }}>Related</Typography>}
                 <Stack style={{ flexWrap: 'wrap' }} direction="row" >
-                    {users?.map((item) => (
+                    {props.searchresult.length !== 0 ? (
+                        <React.Fragment>
+                            {props.searchresult.map((item) => (
 
-                        <Card style={{ margin: '15px' }} sx={{ minWidth: 250 }}>
-                            <CardContent style={{ padding: 0 }}>
-                                <Link to={{
-                                    pathname: '/profile',
-                                    state: {
-                                        username: item?.data?.fname,
-                                        products: item?.data?.productString,
-                                        services: item?.data?.serviceString,
-                                        address: item?.data?.address,
-                                        city: item?.data?.city,
-                                        state: item?.data?.state,
-                                        photo: item?.data?.photoURL,
-                                        role: item?.data?.role,
-                                        fb: item?.data?.fb,
-                                        insta: item?.data?.insta,
-                                        linkin: item?.data?.linkin,
-                                        cardfront: item?.data?.cardFront,
-                                        cardback: item?.data?.cardBack,
-                                        qr: item?.data?.qrCodeImage,
-                                        url: item?.data?.web,
-                                        twitter:item?.data?.twitr,
-                                        youtube:item?.data?.yt,
-                                        whatsapp:item?.data?.whatsapp,
-                                        mail:item?.data?.mail,
-                                        dynamicLink:item?.data?.dynamicLink,
-                                    }
-                                }}>
-                                    <CardMedia component="img"
+                                <Card style={{ margin: '15px' }} sx={{ minWidth: 250 }}>
+                                    <CardContent style={{ padding: 0 }}>
+                                        <Link to={{
+                                            pathname: '/profile',
+                                            state: {
+                                                username: item?.data?.fname,
+                                                products: item?.data?.productString,
+                                                services: item?.data?.serviceString,
+                                                address: item?.data?.address,
+                                                city: item?.data?.city,
+                                                state: item?.data?.state,
+                                                photo: item?.data?.photoURL,
+                                                role: item?.data?.role,
+                                                fb: item?.data?.fb,
+                                                insta: item?.data?.insta,
+                                                linkin: item?.data?.linkin,
+                                                cardfront: item?.data?.cardFront,
+                                                cardback: item?.data?.cardBack,
+                                                qr: item?.data?.qrCodeImage,
+                                                url: item?.data?.web,
+                                                twitter: item?.data?.twitr,
+                                                youtube: item?.data?.yt,
+                                                whatsapp: item?.data?.whatsapp,
+                                                mail: item?.data?.mail,
+                                                dynamicLink: item?.data?.dynamicLink,
+                                            }
+                                        }}>
+                                            <CardMedia component="img"
 
-                                        image={item?.data.cardFront}
-                                        sx={{
-                                            width: '100%', height: '130px',
-                                            backgroundSize: '',
-                                            backgroundRepeat: 'no-repeat',
-                                        }}
-                                    />
-                                </Link>
+                                                image={item?.data.cardFront}
+                                                sx={{
+                                                    width: '100%', height: '130px',
+                                                    backgroundSize: '',
+                                                    backgroundRepeat: 'no-repeat',
+                                                }}
+                                            />
+                                        </Link>
 
-                            </CardContent>
+                                    </CardContent>
 
-                        </Card>
-                    ))}
+                                </Card>
+                            ))}
+                        </React.Fragment>
+                    ) : <React.Fragment>
+                        {users?.map((item) => (
+
+                            <Card style={{ margin: '15px' }} sx={{ minWidth: 250 }}>
+                                <CardContent style={{ padding: 0 }}>
+                                    <Link to={{
+                                        pathname: '/profile',
+                                        state: {
+                                            username: item?.data?.fname,
+                                            products: item?.data?.productString,
+                                            services: item?.data?.serviceString,
+                                            address: item?.data?.address,
+                                            city: item?.data?.city,
+                                            state: item?.data?.state,
+                                            photo: item?.data?.photoURL,
+                                            role: item?.data?.role,
+                                            fb: item?.data?.fb,
+                                            insta: item?.data?.insta,
+                                            linkin: item?.data?.linkin,
+                                            cardfront: item?.data?.cardFront,
+                                            cardback: item?.data?.cardBack,
+                                            qr: item?.data?.qrCodeImage,
+                                            url: item?.data?.web,
+                                            twitter: item?.data?.twitr,
+                                            youtube: item?.data?.yt,
+                                            whatsapp: item?.data?.whatsapp,
+                                            mail: item?.data?.mail,
+                                            dynamicLink: item?.data?.dynamicLink,
+                                        }
+                                    }}>
+                                        <CardMedia component="img"
+
+                                            image={item?.data.cardFront}
+                                            sx={{
+                                                width: '100%', height: '130px',
+                                                backgroundSize: '',
+                                                backgroundRepeat: 'no-repeat',
+                                            }}
+                                        />
+                                    </Link>
+
+                                </CardContent>
+
+                            </Card>
+                        ))}
+                    </React.Fragment>}
+
                 </Stack>
 
             </Container>

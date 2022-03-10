@@ -7,8 +7,7 @@ const MainPage = ()=>{
     return(
         <div>
             <Search/>
-            <SearchButton/>
-            <SearchResults/>
+           
         </div>
 
     )
